@@ -1,0 +1,11 @@
+
+
+# messages/zh/login.yaml
+title: "欢迎回来"
+google_btn: "通过 Google 登录"
+facebook_btn: "通过 Facebook 登录"
+loading: "正在跳转..."
+errors:
+  configuration: "服务器配置错误"
+  access_denied: "拒绝访问"
+  default: "登录失败，请重试"

@@ -1,0 +1,12 @@
+
+
+
+Header:
+  search_placeholder: "搜索商品..."
+  nav:
+    home: "首页"
+    shop: "商店"
+    about: "关于我们"
+  actions:
+    bag: "购物袋"
+    login: "登录"
