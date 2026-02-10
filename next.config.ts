@@ -1,14 +1,10 @@
-import type { NextConfig } from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
+import type {NextConfig} from 'next';
+
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true
 };
 
-module.exports = {
-    i18n: {
-        locales: ['en', 'zh'],  // Add supported languages
-        defaultLocale: 'zh',    // Set default locale
-    },
-};
-
-export default nextConfig;
+export default withNextIntl(nextConfig);

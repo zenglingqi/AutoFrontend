@@ -1,17 +1,31 @@
-// 必须改为 async 函数
-export default async function LocaleLayout({
-                                               children,
-                                               params,
-                                           }: {
-    children: React.ReactNode;
-    params: Promise<{ locale: string }>; // 声明为 Promise
-}) {
-    // 使用 await 获取 locale
-    const { locale } = await params;
+import {notFound} from 'next/navigation';
+import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import {getMessages, setRequestLocale} from 'next-intl/server';
+import {routing} from '@/i18n/navigation';
 
-    return (
-        <html lang={locale}>
-        <body>{children}</body>
-        </html>
-    );
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale}));
+}
+
+export default async function LocaleLayout({
+  children,
+  params
+}: {
+  children: React.ReactNode;
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+  const messages = await getMessages();
+
+  return (
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      {children}
+    </NextIntlClientProvider>
+  );
 }
