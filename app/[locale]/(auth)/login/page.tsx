@@ -1,48 +1,24 @@
-import {getTranslations} from 'next-intl/server';
-import {signIn} from '@/auth';
-import {Link} from '@/i18n/navigation';
+// src/app/[locale]/login/page.tsx
+import { getMessages } from 'next-intl/server';
+import LoginForm from "@/components/Auth/LoginForm";
+import ThemeToggle from "@/components/Header/ThemeButton";
 
-export default async function LoginPage() {
-  const tLogin = await getTranslations('login');
-  const tCommon = await getTranslations('common');
+export default async function LoginPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const messages = await getMessages({ locale });
+    const loginMessages = (messages as any).login || {};
 
-  async function handleGoogleLogin() {
-    'use server';
-    await signIn('google', {redirectTo: '/'});
-  }
+    return (
+        /* 💡 这里的 bg-black 会强制背景永远是黑色，
+           建议改为方案三配色：bg-[#FCFAFA] dark:bg-[#121212] */
+        <main className="min-h-screen flex items-center justify-center bg-[#FDFBF7] dark:bg-[#121110] transition-colors duration-500">
+            {/* 切换按钮可以放在右上角 */}
+            <div className="fixed top-8 right-8">
+                <ThemeToggle />
+            </div>
 
-  async function handleFacebookLogin() {
-    'use server';
-    await signIn('facebook', {redirectTo: '/'});
-  }
-
-  return (
-    <main className="flex min-h-[70vh] flex-col items-center justify-center gap-6 px-6">
-      <h1 className="text-3xl font-bold">{tLogin('title')}</h1>
-
-      <div className="flex w-full max-w-sm flex-col gap-4">
-        <form action={handleGoogleLogin}>
-          <button
-            type="submit"
-            className="flex w-full items-center justify-center gap-3 rounded-xl border px-6 py-3 transition-all hover:bg-zinc-50 active:scale-95"
-          >
-            <span className="font-medium text-zinc-700">{tLogin('google_btn')}</span>
-          </button>
-        </form>
-
-        <form action={handleFacebookLogin}>
-          <button
-            type="submit"
-            className="flex w-full items-center justify-center gap-3 rounded-xl bg-[#1877F2] px-6 py-3 text-white transition-all hover:opacity-90 active:scale-95"
-          >
-            <span className="font-medium">{tLogin('facebook_btn')}</span>
-          </button>
-        </form>
-      </div>
-
-      <p className="text-sm text-zinc-500">
-        <Link href="/">{tCommon('back_home')}</Link>
-      </p>
-    </main>
-  );
+            {/* 💡 删除了这里的 <ThemeProvider>，因为它在 layout.tsx 里已经有了 */}
+            <LoginForm loginMessages={loginMessages} locale={locale} />
+        </main>
+    );
 }
