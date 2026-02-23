@@ -1,0 +1,80 @@
+# footer.yaml / en.json - Footer Node
+branding:
+  name: "Maison LUMIÈRE"
+  description: "Crafting timeless elegance through exceptional traditional craftsmanship. Each piece is a testament to hand-selected gemstones and the aesthetics of sustainable luxury."
+  socials:
+    - platform: "Instagram"
+      href: "https://instagram.com/"
+    - platform: "Facebook"
+      href: "https://facebook.com/"
+    - platform: "Twitter"
+      href: "https://twitter.com/"
+
+# Structure and paths defined in the YAML
+
+sections:
+  - id: "collection"
+    title: "Collections"
+    links:
+      - label: "Jewelry Collections"
+        href: "/category?category=jewelry"
+      - label: "Exquisite Rings"
+        href: "/category?category=rings"
+      - label: "Necklaces & Accessories"
+        href: "/category?category=necklaces"
+      - label: "Private Customization"
+        href: "/shop"
+
+  - id: "service"
+    title: "Client Services"
+    links:
+      - label: "Shipping & Delivery"
+        href: "/service/shipping"
+      - label: "Returns & Exchanges" # Corresponds to return.yaml
+        href: "/legal/return"
+      - label: "Sizing Guide"
+        href: "/service/sizing"
+      - label: "Care Instructions"
+        href: "/service/care"
+
+  - id: "about"
+    title: "About the Brand"
+    links:
+      - label: "Brand Story"
+        href: "/about/story"
+      - label: "Exquisite Craftsmanship"
+        href: "/about/craftsmanship"
+      - label: "Code of Ethics"
+        href: "/about/ethics"
+      - label: "Contact Us"
+        href: "/contact"
+
+newsletter:
+  subtitle: "Join our community for priority previews and the latest news."
+  title: "Membership / Newsletter"
+  helper: "Subscribe for the latest news and exclusive offers"
+  placeholder: "Enter your email address"
+  cta: "Subscribe Now"
+  success: "Thank you for subscribing. We will send you our curated content shortly."
+
+legal_bottom: # Bottom horizontal links
+  - label: "Privacy Policy"
+    href: "/legal/privacy"
+  - label: "Terms of Use"
+    href: "/legal/terms"
+  - label: "Cookie Settings"
+    href: "/legal/cookies"
+  - label: "Payment Security"
+    href: "/legal/payment-security"
+
+Visa: "Visa"
+MasterCard: "MasterCard"
+WeChat Pay: "Wechat Pay"
+AMEX: "AMEX"
+PayPal: "PayPal"
+UnionPay: "UnionPay"
+ApplePay: "ApplePay"
+Card: "Card"
+JCB: "JCB"
+
+copyright: "© {year} {company}. All rights reserved."

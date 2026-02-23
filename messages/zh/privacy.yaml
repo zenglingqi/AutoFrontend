@@ -1,0 +1,74 @@
+title: "隐私政策"
+subtitle: "本政策概述了我们如何收集、使用和保护您的个人信息，遵守国际数据保护标准。"
+lastUpdated: "最后更新"
+
+sections:
+  # 1. Entity Information
+  entity:
+    title: "1. 实体信息"
+    body: "<strong>AINO GLOBAL COMMERCE LIMITED</strong>, (商业注册号: 79559648), 位于香港新蒲岗九龙湾街99号凯达大厦8楼D07单元（以下简称‘公司’，‘我们’，‘我们的’），运营该网站"
+
+  # 2. Data Collection
+  collection:
+    title: "2. 数据收集与方法"
+    intro: "我们收集信息以便为用户提供更好的服务。包括："
+    identifiers: "<strong>个人标识信息：</strong>电子邮件地址、电话号码和帐户名称。"
+    auth: "<strong>第三方认证：</strong>当您通过<strong>Google</strong>或<strong>Facebook</strong>登录时，我们会收到由提供商授权的唯一令牌和基本个人资料信息。"
+    logData: "<strong>日志数据：</strong>技术信息，如IP地址、浏览器类型和设备标识符，通过Cookies自动收集，以改善网站性能。"
+
+  # 3. Facebook Deletion (The Core Compliance Part)
+  fbDeletion:
+    title: "3. Facebook 数据删除说明"
+    intro: "为遵守Facebook平台数据删除政策，我们提供了一个<strong>数据删除回调URL</strong>，该URL会自动处理删除通过Facebook登录关联的您的个人信息的请求。"
+    howToTitle: "如何解除关联并删除您的数据："
+    step1: "进入您的Facebook个人资料，点击<strong>设置与隐私 > 设置</strong>。"
+    step2: "导航至<strong>应用和网站</strong>，找到<strong>'AINO Store'</strong>。"
+    step3: "点击<strong>移除</strong>按钮。"
+    step4: "在‘查看已移除应用和网站’部分，点击<strong>发送请求</strong>以触发我们的自动删除API。"
+    manualTitle: "手动删除："
+    manualBody: "如果您无法使用自动化工具，您可以通过发送电子邮件至<span class='font-semibold text-blue-600'></span>，主题为‘数据删除请求’。我们将在7个工作日内验证您的身份并清除您的数据。"
+
+  # 4. Security
+  security:
+    title: "4. 安全与加密"
+    intro: "安全是我们的首要任务。我们采取了行业标准的技术和组织措施："
+    storage: "所有敏感数据（密码、联系信息）在静态时使用AES-256加密，在传输过程中通过TLS/SSL加密。"
+    access: "我们严格禁止未经授权的内部人员访问用户数据库。"
+    zeroSale: "<strong>零销售政策：</strong>我们不会将您的个人数据出售、出租或转让给第三方营销商或数据经纪商。"
+
+  # 5. Payment
+  payment:
+    title: "5. 支付网关与交易安全"
+    intro: "金融交易通过高度安全的合作伙伴<strong>PayPal</strong>和<strong>Stripe</strong>处理："
+    quote: "我们不在服务器上存储、处理或传输任何原始信用卡数据。所有持卡人数据直接由支付提供商处理，支付提供商遵守PCI-DSS标准。"
+    transparency: "<strong>订阅透明性：</strong>我们不进行自动续费。每笔交易都需要在结账时获得用户的明确授权。"
+
+  # 6. Rights
+  rights:
+    title: "6. 数据保留与您的权利"
+    intro: "为遵守Facebook和Google平台政策，我们提供以下权利："
+    erasure: "<strong>删除权：</strong>您可以随时请求永久删除您的帐户和所有相关数据。"
+    portability: "<strong>数据可携带性：</strong>您可以请求我们持有的关于您的个人数据副本。"
+    retention: "<strong>数据保留：</strong>我们仅在必要的时间内保留个人数据，以实现收集数据的目的或遵守法律义务。"
+    linkText: "点击此处访问我们的数据删除说明。"
+
+  # 7. Minors
+  minors:
+    title: "7. 儿童隐私"
+    body: "我们的服务不针对16岁以下的个人。我们不会故意收集儿童的个人数据。如果我们意识到已经收集了此类数据，我们将立即采取措施删除这些数据。"
+
+  # 8. Amendments
+  amendments:
+    title: "8. 修订"
+    body: "我们可能会不时更新此隐私政策。我们将在本页面发布新政策，并更新‘最后更新’日期，以通知您任何重大更改。"
+
+  # Contact
+  contact:
+    title: "联系方式"
+    subtitle: "如有关于您的隐私、数据删除确认代码或安全的任何问题，请联系我们："
+    companyName: "AINO GLOBAL COMMERCE LIMITED (安隆環球商貿有限公司)"
+    headquarters: "香港总部"
+    email: "电子邮件"
+    web: "网站"
+    address: "地址"
+    addressDetail: "香港新蒲岗九龙湾街99号凯达大厦8楼D07单元"

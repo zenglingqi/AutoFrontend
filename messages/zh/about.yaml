@@ -1,0 +1,46 @@
+
+
+
+
+title: "关于我们"
+subtitle: "公司提供各种零售服务"
+basical_intro:
+  title: "Overview"
+  body: "This Cookie Policy explains what cookies are, how we use them on our site and apps, and the choices you have regarding cookies. By using our services, you consent to the use of cookies as described in this policy."
+short_des:
+  title: "安秾"
+  body: "Cookies are small text files placed on your device (computer, tablet, or mobile) when you visit a website. They help the site remember information about your visit, which can make the site work better and provide a more personalized experience."
+based_year:
+  title: "Types of cookies we use"
+  essential:
+    title: "Essential cookies"
+    body: "These cookies are necessary for the website to function and cannot be switched off in our systems. They enable core features such as security, network management, and accessibility."
+where:
+  title: "How we use cookies"
+  body: "We use cookies to provide and improve our services, to remember your preferences, to analyze site usage, and to support advertising and marketing efforts. Some cookies are set by third-party services that appear on our pages."
+  country: ""
+  where: ""
+
+contact_info:
+  phone: "+8612399"
+  mail: "emailaddress"
+  working_hours: ""
+
+third_parties:
+  title: "Third-party cookies"
+  body: "Some content on our site is provided by third parties (for example, analytics or advertising providers). These third parties may set cookies on your device. We do not control third-party cookies; please review their privacy policies for more information."
+  terms_des: "terms描述"
+  terms: "内部跳转url"
+
+service:
+  title: "服务描述"
+  content_title1: "零售"
+  content_1: "零售部分简介"
+  content_title2: "ToC"
+  content_2: "ToC部分介绍"
+achievement:
+  desc: "简介"
+  title1: "Contact us"
+  body1: "If you have questions about our Cookie Policy, please contact our support team."
+  title2: "名称1"
+  body2: "相关介绍2"

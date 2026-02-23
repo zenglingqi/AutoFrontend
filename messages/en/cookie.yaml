@@ -1,0 +1,50 @@
+
+  title: "Cookie Policy"
+  subtitle: "How we use cookies and similar technologies"
+  intro:
+    title: "Overview"
+    body: "This Cookie Policy explains what cookies are, how we use them on our site and apps, and the choices you have regarding cookies. By using our services, you consent to the use of cookies as described in this policy."
+  what_are_cookies:
+    title: "What are cookies?"
+    body: "Cookies are small text files placed on your device (computer, tablet, or mobile) when you visit a website. They help the site remember information about your visit, which can make the site work better and provide a more personalized experience."
+  types:
+    title: "Types of cookies we use"
+    essential:
+      title: "Essential cookies"
+      body: "These cookies are necessary for the website to function and cannot be switched off in our systems. They enable core features such as security, network management, and accessibility."
+    performance:
+      title: "Performance and analytics cookies"
+      body: "These cookies collect information about how visitors use our site (for example, which pages are visited most often). We use this information to improve how the site works."
+    functionality:
+      title: "Functionality cookies"
+      body: "These cookies allow the site to remember choices you make (such as language or region) and provide enhanced, more personal features."
+    targeting:
+      title: "Targeting and advertising cookies"
+      body: "These cookies are used to deliver adverts more relevant to you and your interests. They may also be used to limit the number of times you see an ad and to help measure the effectiveness of advertising campaigns."
+  how_we_use:
+    title: "How we use cookies"
+    body: "We use cookies to provide and improve our services, to remember your preferences, to analyze site usage, and to support advertising and marketing efforts. Some cookies are set by third-party services that appear on our pages."
+  your_choices:
+    title: "Your choices about cookies"
+    body: "You can control and/or delete cookies as you wish. Most browsers allow you to refuse cookies or delete specific cookies. Note that blocking or deleting cookies may impact your experience and some parts of the site may no longer be fully accessible."
+    manage_browser:
+      title: "Manage via browser settings"
+      body: "Use your browser settings to manage cookies. See your browser's help pages for instructions."
+    opt_out:
+      title: "Opting out of analytics and advertising"
+      body: "You can opt out of certain analytics and advertising cookies via the relevant third-party opt-out tools or browser extensions."
+  third_parties:
+    title: "Third-party cookies"
+    body: "Some content on our site is provided by third parties (for example, analytics or advertising providers). These third parties may set cookies on your device. We do not control third-party cookies; please review their privacy policies for more information."
+  retention:
+    title: "Cookie retention"
+    body: "Cookie durations vary: some expire at the end of your session (when you close your browser), while others remain for longer to remember your preferences on return visits. Specific durations are listed in the cookie table below (if available)."
+  faq:
+    title: "Frequently asked questions"
+    q1: "Will deleting cookies log me out?"
+    a1: "Deleting cookies may sign you out of accounts and remove site preferences. You may need to sign in again and reconfigure settings."
+    q2: "Are cookies safe?"
+    a2: "Cookies are generally safe and do not contain personal information by themselves. However, they can be used to track browsing behavior. We follow industry best practices to protect user privacy."
+  contact:
+    title: "Contact us"
+    body: "If you have questions about our Cookie Policy, please contact our support team."

@@ -1,0 +1,8 @@
+
+
+
+
+
+checkout: "去结算"
+errors:
+  - notflucent: "库存不足"

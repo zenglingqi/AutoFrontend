@@ -1,0 +1,17 @@
+import { MetadataRoute } from 'next';
+
+export default function robots(): MetadataRoute.Robots {
+    return {
+        rules: {
+            userAgent: '*',
+            allow: '/',
+            disallow: [
+                '/*/order/',     // 禁止爬取支付成功、取消、详情页
+                '/*/profile/',   // 禁止爬取个人中心和订单历史
+                '/*/api/',       // 禁止爬取后端代理接口
+                '/*/cart',       // 购物车无须爬取
+            ],
+        },
+        sitemap: 'https://yourluxury-shop.com/sitemap.xml',
+    };
+}

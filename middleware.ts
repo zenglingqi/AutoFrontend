@@ -4,13 +4,16 @@ import { routing } from './i18n/navigation';
 
 export default createMiddleware(routing);
 
+
 export const config = {
-    // 重点：排除所有的 API 路由、静态资源后缀和内部路径
     matcher: [
-        // 1. 匹配所有路径，除非包含以下关键词
+        // 排除所有不需要多语言处理的路径 (api, 静态文件等)
         '/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|.*\\..*).*)',
-        // 2. 显式匹配根路径和多语言前缀
+
+        // 允许所有根路径下的请求进入中间件，让 next-intl 内部逻辑决定去留
         '/',
-        '/(zh|en)/:path*'
+
+        // 动态匹配所有前缀，不再写死 (zh|en)
+        //'/:path*'
     ]
 };

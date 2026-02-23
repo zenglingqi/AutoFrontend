@@ -1,19 +1,15 @@
-import {getTranslations} from 'next-intl/server';
-import {Link} from '@/i18n/navigation';
+// app/[locale]/page.tsx
+import { redirect } from 'next/navigation';
 
-export default async function HomePage() {
-  const t = await getTranslations('common');
+// 修改接口定义：params 必须是 Promise
+interface Props {
+    params: Promise<{ locale: string }>;
+}
 
-  return (
-    <main className="mx-auto flex min-h-[70vh] max-w-3xl flex-col items-center justify-center gap-6 px-6 text-center">
-      <h1 className="text-4xl font-semibold">{t('app_title')}</h1>
-      <p className="text-zinc-600">{t('app_description')}</p>
-      <Link
-        href="/login"
-        className="rounded-lg bg-black px-4 py-2 text-white transition hover:opacity-90"
-      >
-        {t('go_login')}
-      </Link>
-    </main>
-  );
+export default async function LocaleRootPage({ params }: Props) {
+    // 这里的 await 是正确的，但上面的类型声明必须是 Promise
+    const { locale } = await params;
+
+    redirect(`/${locale}/home`);
+    return null;
 }
