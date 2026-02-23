@@ -1,0 +1,48 @@
+
+  title: "Terms of Service"
+  subtitle: "Terms and conditions for using our website and purchasing goods"
+  intro:
+    title: "Introduction"
+    body: "These Terms of Service govern your use of our website and the purchase of goods from our online store. By accessing or using our site, you agree to these terms. Please read them carefully."
+  scope:
+    title: "Scope"
+    body: "These terms apply to all visitors, users and others who access or use the service. They govern purchases of everyday consumer goods sold on this site."
+  account:
+    title: "Account and Eligibility"
+    body: "You must be at least 18 years old to create an account and place orders. You are responsible for maintaining the confidentiality of your account credentials and for all activity under your account."
+  orders:
+    title: "Orders and Acceptance"
+    body: "Placing an order constitutes an offer to purchase. We reserve the right to accept or decline orders for any reason, including product availability, errors in pricing or description, or suspected fraud."
+  pricing:
+    title: "Pricing and Taxes"
+    body: "Prices are shown in the currency indicated and include applicable taxes where required. We reserve the right to change prices at any time, but changes will not affect orders already accepted."
+  payment:
+    title: "Payment"
+    body: "We accept the payment methods displayed at checkout. Payment must be authorized and cleared before we process and ship your order."
+  shipping:
+    title: "Shipping and Delivery"
+    body: "Shipping times and costs are provided at checkout. Delivery dates are estimates and may be affected by carrier delays, customs, or other factors beyond our control."
+  returns:
+    title: "Returns and Refunds"
+    body: "Our returns policy is available on the Returns page. Generally, returns are accepted within the specified period for unused items in original condition. Refunds will be processed after we receive and inspect the returned items."
+  product_info:
+    title: "Product Information"
+    body: "We strive to provide accurate product descriptions and images. However, colors and measurements may vary slightly. If you receive a defective or incorrect item, contact customer support for assistance."
+  intellectual_property:
+    title: "Intellectual Property"
+    body: "All content on the site, including text, images, logos and designs, is owned or licensed by us and protected by intellectual property laws. You may not reproduce or use our content without permission."
+  limitation:
+    title: "Limitation of Liability"
+    body: "To the fullest extent permitted by law, we are not liable for indirect, incidental, special or consequential damages arising from your use of the site or purchase of products."
+  termination:
+    title: "Termination"
+    body: "We may suspend or terminate access to the site or your account for violations of these terms or for other reasons at our discretion."
+  governing_law:
+    title: "Governing Law"
+    body: "These terms are governed by the laws of the jurisdiction specified in our legal notices. Disputes will be resolved in the applicable courts unless otherwise required by law."
+  changes:
+    title: "Changes to Terms"
+    body: "We may update these terms from time to time. We will post the updated terms on the site and indicate the effective date. Continued use of the site after changes constitutes acceptance."
+  contact:
+    title: "Contact"
+    body: "If you have questions about these Terms of Service, please contact our support team."

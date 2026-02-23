@@ -1,0 +1,50 @@
+
+  title: "Cookie 政策"
+  subtitle: "我们如何使用 Cookie 及类似技术"
+  intro:
+    title: "概述"
+    body: "本 Cookie 政策说明 Cookie 是什么、我们在网站和应用中如何使用 Cookie，以及您对 Cookie 的选择。使用我们的服务即表示您同意按照本政策使用 Cookie。"
+  what_are_cookies:
+    title: "什么是 Cookie？"
+    body: "Cookie 是在您访问网站时存储在设备（电脑、平板或手机）上的小型文本文件。它们帮助网站记住您的访问信息，从而提升网站功能并提供更个性化的体验。"
+  types:
+    title: "我们使用的 Cookie 类型"
+    essential:
+      title: "必要性 Cookie"
+      body: "这些 Cookie 对网站的基本功能是必需的，无法在我们的系统中关闭。它们支持安全、网络管理和可访问性等核心功能。"
+    performance:
+      title: "性能与分析 Cookie"
+      body: "这些 Cookie 收集有关访问者如何使用我们网站的信息（例如哪些页面最常被访问）。我们使用这些信息来改进网站性能。"
+    functionality:
+      title: "功能性 Cookie"
+      body: "这些 Cookie 允许网站记住您所做的选择（例如语言或地区），并提供增强的个性化功能。"
+    targeting:
+      title: "定向与广告 Cookie"
+      body: "这些 Cookie 用于向您展示更相关的广告，并可能用于限制广告展示次数以及衡量广告活动的效果。"
+  how_we_use:
+    title: "我们如何使用 Cookie"
+    body: "我们使用 Cookie 来提供和改进服务、记住您的偏好、分析网站使用情况，并支持广告与营销活动。部分 Cookie 由出现在我们页面上的第三方服务设置。"
+  your_choices:
+    title: "您的选择"
+    body: "您可以控制或删除 Cookie。大多数浏览器允许您拒绝 Cookie 或删除特定 Cookie。请注意，阻止或删除 Cookie 可能会影响您的使用体验，某些网站功能可能无法正常使用。"
+    manage_browser:
+      title: "通过浏览器设置管理"
+      body: "使用浏览器设置管理 Cookie。有关说明，请参阅浏览器帮助页面。"
+    opt_out:
+      title: "选择退出分析与广告"
+      body: "您可以通过相关第三方的选择退出工具或浏览器扩展来选择退出某些分析和广告 Cookie。"
+  third_parties:
+    title: "第三方 Cookie"
+    body: "我们网站上的部分内容由第三方提供（例如分析或广告提供商）。这些第三方可能会在您的设备上设置 Cookie。我们无法控制第三方 Cookie，请查阅其隐私政策以获取更多信息。"
+  retention:
+    title: "Cookie 保留期"
+    body: "Cookie 的持续时间各不相同：有些在会话结束时（关闭浏览器时）过期，有些则会保留更长时间以记住您的偏好。具体时长可在下方的 Cookie 列表中查看（如有）。"
+  faq:
+    title: "常见问题"
+    q1: "删除 Cookie 会让我退出登录吗？"
+    a1: "删除 Cookie 可能会导致您从账户中退出并移除网站偏好设置。您可能需要重新登录并重新配置设置。"
+    q2: "Cookie 是否安全？"
+    a2: "Cookie 本身通常是安全的，不会包含个人信息。但它们可能被用于跟踪浏览行为。我们遵循行业最佳实践以保护用户隐私。"
+  contact:
+    title: "联系我们"
+    body: "如对 Cookie 政策有疑问，请通过联系我们的支持团队。"

@@ -16,7 +16,7 @@ type TranslationItem = {
     key: string;
 };
 
-const BASE_LOCALE = 'zh';
+const BASE_LOCALE = 'en';
 
 /**
  * 1. 加载本地基准语言包 (zh)
@@ -88,15 +88,36 @@ function buildPayload(baseMessages: Messages): TranslationItem[] {
 // 辅助函数：递归拍平 YAML (解决 Azure 400)
 function flattenMessages(obj: any, prefix = ''): { key: string; text: string }[] {
     let items: { key: string; text: string }[] = [];
+
+
+    // 匹配路径的正则：以 / 开头，且只包含 ASCII 路径字符，不含中文
+    const isUrlPath = (str: string) => {
+        // ^/ : 以斜杠开头
+        // [a-zA-Z0-9\-_/]+ : 只允许英文、数字、中划线、下划线、斜杠
+        // $ : 结尾
+        const pathRegex = /^\/[a-zA-Z0-9\-_/]*$/;
+        // 检查是否包含中文的正则
+        const hasChinese = /[\u4e00-\u9fa5]/;
+
+        return pathRegex.test(str) && !hasChinese.test(str);
+    };
+
     for (const [k, v] of Object.entries(obj)) {
         const key = prefix ? `${prefix}.${k}` : k;
         if (typeof v === 'string') {
+            // 如果判定为纯技术路径，则不加入待翻译列表
+            if (isUrlPath(v)) {
+                continue;
+            }
+
             items.push({ key, text: v });
         } else if (typeof v === 'object' && v !== null) {
             items = items.concat(flattenMessages(v, key));
         }
     }
+
     return items;
+
 }
 
 /**
@@ -104,7 +125,7 @@ function flattenMessages(obj: any, prefix = ''): { key: string; text: string }[]
  * 对接后端 Spring Boot: /api/i18n/translate
  */
 async function syncTranslations(locale: string, baseMessages: Messages): Promise<Messages> {
-    const apiBase = process.env.BACKEND_API;
+    const apiBase = process.env.NEXT_PUBLIC_BACKEND_API;
 
     // 如果没有 API 地址或当前是基准语言，直接返回本地消息
     if (!apiBase || locale === BASE_LOCALE) {
@@ -144,11 +165,16 @@ async function syncTranslations(locale: string, baseMessages: Messages): Promise
         if (!response.ok) throw new Error(`Status ${response.status}`);
 
         const translatedData = await response.json();
-        const finalMessages: Messages = {};
+        //const finalMessages: Messages = {};
+
+        // 这样即便 Blog.href 被跳过翻译，它依然会有原始的 "/blog" 值
+        const finalMessages: Messages = JSON.parse(JSON.stringify(baseMessages));
 
         for (const [ns, flatKeys] of Object.entries(translatedData)) {
-            finalMessages[ns] = {};
+
+            if (!finalMessages[ns]) finalMessages[ns] = {};
             for (const [flatKey, text] of Object.entries(flatKeys as any)) {
+
                 setDeep(finalMessages[ns], flatKey, text as string);
             }
         }

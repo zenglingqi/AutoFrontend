@@ -1,0 +1,17 @@
+
+
+
+
+
+items:
+  - name: "主页"
+    href: "/"
+  - name: "系列作品"
+    href: "/category"
+  - name: "商城"
+    href: "/shop"
+    children: # 只要有 children，前端就会自动渲染展开逻辑
+      - name: "女士系列"
+        href: "/category?keyword=lady"
+  - name: "博客"
+    href: "/blog"

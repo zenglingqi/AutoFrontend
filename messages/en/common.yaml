@@ -1,0 +1,4 @@
+app_title: "国际化商城"
+app_description: "基于 Next.js 15、next-intl 与 Auth.js 的全栈示例项目。"
+go_login: "前往登录"
+back_home: "返回首页"

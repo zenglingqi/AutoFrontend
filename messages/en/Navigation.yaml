@@ -1,0 +1,19 @@
+
+
+
+
+
+items:
+  - name: "home"
+    href: "/"
+  - name: "series"
+    href: "/category"
+  - name: "shop"
+    href: "/shop"
+    children: # 只要有 children，前端就会自动渲染展开逻辑
+      - name: "lady"
+        href: "/category?keyword=lady"
+      - name: "man"
+        href: "/category?keyword=man"
+  - name: "blog"
+    href: "/blog"

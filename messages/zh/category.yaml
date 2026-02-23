@@ -1,0 +1,5 @@
+filter:
+  collections: "Collections"
+  brands: "Brands"
+  search: "Search results for"
+  empty: "No products found."

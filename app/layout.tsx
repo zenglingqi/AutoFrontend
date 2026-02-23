@@ -1,15 +1,26 @@
 import type {Metadata} from 'next';
 import './globals.css';
+// app/layout.tsx
+import { ThemeProvider } from "@/components/Providers/ThemeProvider";
+import {CurrencyProvider} from "@/components/Providers/CurrencyProvider";
+import {CartProvider} from "@/components/Context/CartContext";
+import {SessionProvider} from "next-auth/react";
 
-export const metadata: Metadata = {
-  title: 'Auto Frontend',
-  description: 'Next.js 15 i18n + auth scaffold'
-};
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+    return (
+        <html suppressHydrationWarning>
+        <body className="antialiased">
+            <SessionProvider>
+                <ThemeProvider>
+                    <CurrencyProvider>
+                        <CartProvider>
+                            {children}
+                        </CartProvider>
+                    </CurrencyProvider>
+                </ThemeProvider>
+            </SessionProvider>
 
-export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
-  return (
-    <html suppressHydrationWarning>
-      <body className="antialiased">{children}</body>
-    </html>
-  );
+        </body>
+        </html>
+    );
 }

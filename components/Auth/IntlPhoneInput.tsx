@@ -1,43 +1,61 @@
 'use client';
 
-import { useRef } from "react";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 
-export default function IntlPhoneInput({ value, onChange, placeholder }: any) {
+// 增加 onCountryChange 定义
+interface IntlPhoneInputProps {
+    value: string;
+    onChangeAction: (phone: string) => void;
+    onCountryChangeAction?: (countryCode: string) => void;
+}
+
+export default function IntlPhoneInput({ value, onChangeAction, onCountryChangeAction }: IntlPhoneInputProps) {
     return (
         <div className="fashion-phone-input w-full relative group">
             <PhoneInput
                 value={value}
-                onChange={(v) => onChange(v)}
+                // ⭐ 修改此处：v 是电话号码，meta 包含 country 对象
+                onChange={(v, meta) => {
+                    onChangeAction(v);
+                    if (onCountryChangeAction && meta.country) {
+                        // 回传 iso2 码（如 "hk", "us"），转为大写以匹配后端常用格式
+                        onCountryChangeAction(meta.country.iso2.toUpperCase());
+                    }
+                }}
                 defaultCountry={"hk"}
                 className="w-full flex items-center"
-                // 移除所有框线，仅保留文字，靠外部容器控制样式
-                inputClassName="!bg-transparent !border-none !text-sm !text-[#4A443F] dark:!text-[#E5E0D8] !w-full !p-0 !h-auto !outline-none !shadow-none !placeholder-[#BCB5AC]"
+                inputClassName="!bg-transparent !border-none !text-sm !text-foreground !w-full !p-0 !h-auto !outline-none !shadow-none !placeholder-muted/40 font-medium"
                 countrySelectorStyleProps={{
-                    buttonClassName: '!bg-transparent !border-none !p-0 !pr-3 !opacity-60 hover:!opacity-100 transition-opacity',
-                    dropdownArrowClassName: 'dark:!border-[#C5A059] !border-[#4A443F]',
-                    flagClassName: '!rounded-sm !scale-90 !grayscale-[0.2]',
+                    buttonClassName: '!bg-transparent !border-none !p-0 !pr-3 opacity-100 transition-opacity',
+                    dropdownArrowClassName: '!border-foreground/50',
+                    flagClassName: '!rounded-sm !scale-100',
                 }}
             />
-            {/* 极细底边线：浅色用米灰，深色用深岩色 */}
-            <div className="absolute bottom-[-6px] left-0 w-full h-[1px] bg-[#E5E0D8] dark:bg-[#2A2826] group-focus-within:bg-[#C5A059] transition-colors" />
+
+            {/* 保持原有的底边线设计 */}
+            <div className="absolute bottom-[-8px] left-0 w-full h-[1px] bg-border group-focus-within:bg-gold transition-colors" />
 
             <style jsx global>{`
-                .react-international-phone-input-container { background: transparent !important; border: none !important; }
-                /* 下拉列表深浅适配 */
                 .react-international-phone-country-selector-dropdown {
-                    background-color: #FDFBF7 !important; /* Light Base */
-                    border: 1px solid #E5E0D8 !important;
+                    background-color: rgb(var(--card)) !important;
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgb(var(--card-border)) !important;
+                    box-shadow: 0 15px 30px -10px rgba(0,0,0,0.2) !important;
+                    z-index: 50 !important;
                 }
-                .dark .react-international-phone-country-selector-dropdown {
-                    background-color: #1C1A19 !important; /* Dark Surface */
-                    border: 1px solid #2A2826 !important;
+                .react-international-phone-country-selector-list-item {
+                    color: rgb(var(--foreground)) !important;
+                    font-size: 13px !important;
+                    font-weight: 500 !important;
+                    padding: 10px !important;
                 }
-                .react-international-phone-country-selector-list-item { color: #4A443F !important; }
-                .dark .react-international-phone-country-selector-list-item { color: #E5E0D8 !important; }
-                .react-international-phone-country-selector-list-item:hover { background-color: #F4F0E8 !important; }
-                .dark .react-international-phone-country-selector-list-item:hover { background-color: #2A2826 !important; }
+                .react-international-phone-country-selector-list-item:hover {
+                    background-color: rgba(var(--card-border), 0.3) !important;
+                }
+                .react-international-phone-country-selector-list-item--selected {
+                    background-color: rgba(var(--card-border), 0.5) !important;
+                }
             `}</style>
         </div>
     );

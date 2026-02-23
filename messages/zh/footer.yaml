@@ -1,0 +1,90 @@
+# footer.yaml / zh.json 中的 footer 节点
+branding:
+  name: "Maison LUMIÈRE"
+  description: "通过卓越的传统工艺打造永恒的优雅。每一件作品都是对手工甄选宝石和可持续奢华美学的见证。"
+  socials:
+    - platform: "Instagram"
+      href: "https://instagram.com/"
+    - platform: "Facebook"
+      href: "https://facebook.com/"
+    - platform: "Twitter"
+      href: "https://twitter.com/"
+
+# 将所有层级结构和路径都定义在 yaml 中
+sections:
+  - id: "collection"
+    title: "系列分类"
+    links:
+      - label: "珠宝系列"
+        href: "/category?category=jewelry"
+      - label: "精品戒指"
+        href: "/category?category=rings"
+      - label: "项链配饰"
+        href: "/category?category=necklaces"
+      - label: "私人定制"
+        href: "/shop"
+
+  - id: "service"
+    title: "客户服务"
+    links:
+      - label: "物流配送"
+        href: "/service/shipping"
+      - label: "退换货政策" # 对应 return.yaml
+        href: "/legal/return"
+      - label: "尺码指南"
+        href: "/service/sizing"
+      - label: "保养说明"
+        href: "/service/care"
+
+  - id: "about"
+    title: "关于品牌"
+    links:
+      - label: "品牌故事"
+        href: "/about/story"
+      - label: "匠心工艺"
+        href: "/about/craftsmanship"
+      - label: "道德准则"
+        href: "/about/ethics"
+      - label: "联系我们"
+        href: "/contact"
+
+
+
+
+newsletter:
+  subtitle: "加入我们的系列，获取优先预览及最新资讯。"
+  title: "会员 / 订阅"
+  helper: "订阅获取最新资讯和专属优惠"
+  placeholder: "输入您的邮箱"
+  cta: "立即订阅"
+  success: "感谢订阅，我们将为您推送精选内容。"
+
+legal_bottom: # 底部横向链接
+  - label: "隐私政策"
+    href: "/legal/privacy"
+  - label: "使用条款"
+    href: "/legal/terms"
+  - label: "Cookie 设置"
+    href: "/legal/cookies"
+  - label: "支付安全"
+    href: "/legal/payment-security"
+
+
+Visa: "Visa"
+MasterCard: "MasterCard"
+WeChat Pay: "Wechat Pay"
+AMEX: "AMEX"
+PayPal: "PayPal"
+UnionPay: "UnionPay"
+ApplePay: "ApplePay"
+Card: "Card"
+JCB: "JCB"
+
+
+
+
+
+
+copyright: "© {year} {company}. 保留所有权利。"
+
+

@@ -8,53 +8,59 @@ export default function RegisterForm({ loginMessages, locale }: any) {
     const [formData, setFormData] = useState({ identifier: '', password: '', code: '' });
 
     return (
-        /* 背景色随模式切换：奶油米 -> 暖熏黑 */
-        <div className="w-full max-w-[420px] bg-[#FDFBF7] dark:bg-[#121110] border border-[#E5E0D8] dark:border-[#2A2826] rounded-[2rem] p-10 md:p-14 shadow-sm">
-
-            <div className="text-center mb-12">
-                <p className="text-[10px] uppercase tracking-[0.4em] text-[#A89F91] mb-2">Artisanal Jewelry</p>
-                <h1 className="text-2xl font-serif text-[#4A443F] dark:text-[#E5E0D8] italic">Create Account</h1>
+        <div className="w-full max-w-[420px] bg-card border border-border rounded-[2.5rem] p-10 md:p-14 shadow-sm transition-all duration-500">
+            <div className="text-center mb-10">
+                <p className="text-[10px] uppercase tracking-[0.4em] text-muted font-bold mb-2">Maison Collection</p>
+                <h1 className="text-3xl font-serif text-foreground italic tracking-tight">Create Account</h1>
             </div>
 
-            {/* 切换器：无框，仅靠文字和下划线 */}
-            <div className="flex justify-center gap-8 mb-10 border-b border-[#E5E0D8]/50 dark:border-[#2A2826]/50">
+            <div className="flex justify-center gap-10 mb-12 border-b border-border/40">
                 {['EMAIL', 'PHONE'].map((type) => (
                     <button
                         key={type}
                         onClick={() => setRegType(type as any)}
-                        className={`pb-2 text-[10px] uppercase tracking-widest transition-all relative ${
-                            regType === type ? 'text-[#C5A059] font-bold' : 'text-[#BCB5AC]'
+                        className={`pb-3 text-[10px] uppercase tracking-[0.3em] transition-all relative font-black ${
+                            regType === type ? 'text-gold' : 'text-muted/40 hover:text-muted'
                         }`}
                     >
                         {type}
-                        {regType === type && <div className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#C5A059]" />}
+                        {regType === type && <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gold" />}
                     </button>
                 ))}
             </div>
 
-            <form className="space-y-10">
+            <form className="space-y-12">
                 <div className="relative group">
-                    <label className="text-[9px] uppercase tracking-[0.2em] text-[#A89F91]">Identification</label>
-                    {regType === 'PHONE' ? (
-                        <div className="pt-2"><IntlPhoneInput value={formData.identifier} onChange={(v: any) => setFormData({...formData, identifier: v})} /></div>
-                    ) : (
-                        <input type="email" className="w-full bg-transparent border-b border-[#E5E0D8] dark:border-[#2A2826] py-2 text-sm text-[#4A443F] dark:text-[#E5E0D8] outline-none focus:border-[#C5A059] transition-colors" placeholder="Email Address" />
-                    )}
+                    <label className="text-[10px] uppercase tracking-[0.2em] text-muted font-bold group-focus-within:text-gold transition-colors">Identification</label>
+                    <div className="mt-2">
+                        {regType === 'PHONE' ? (
+                            <IntlPhoneInput value={formData.identifier} onChangeAction={(v: any) => setFormData({...formData, identifier: v})} />
+                        ) : (
+                            <input
+                                type="email"
+                                className="w-full bg-transparent border-b border-border py-2.5 text-sm text-foreground outline-none focus:border-gold transition-all placeholder:text-muted/40 font-medium"
+                                placeholder="Email Address"
+                            />
+                        )}
+                    </div>
                 </div>
 
                 <div className="relative group">
-                    <label className="text-[9px] uppercase tracking-[0.2em] text-[#A89F91]">Security</label>
-                    <input type="password" className="w-full bg-transparent border-b border-[#E5E0D8] dark:border-[#2A2826] py-2 text-sm text-[#4A443F] dark:text-[#E5E0D8] outline-none focus:border-[#C5A059] transition-colors" placeholder="Password" />
+                    <label className="text-[10px] uppercase tracking-[0.2em] text-muted font-bold group-focus-within:text-gold transition-colors">Security</label>
+                    <input
+                        type="password"
+                        className="w-full bg-transparent border-b border-border py-2.5 text-sm text-foreground outline-none focus:border-gold transition-all placeholder:text-muted/40 font-medium"
+                        placeholder="Create Password"
+                    />
                 </div>
 
-                {/* 注册按钮：在浅色下是深褐色，深色下是柔金色 */}
-                <button className="w-full bg-[#4A443F] dark:bg-[#C5A059] text-[#FDFBF7] dark:text-[#121110] text-[11px] uppercase tracking-[0.3em] font-bold py-4 rounded-full transition-all hover:opacity-90 active:scale-[0.98]">
+                <button className="w-full bg-foreground text-background text-[11px] uppercase tracking-[0.3em] font-black py-5 rounded-full transition-all hover:opacity-95 active:scale-[0.98] shadow-lg mt-4">
                     Join Collection
                 </button>
             </form>
 
-            <p className="mt-12 text-center text-[10px] tracking-widest text-[#BCB5AC] uppercase">
-                Existing Member? <a href={`/${locale}/login`} className="text-[#C5A059] font-bold ml-1 hover:underline">Log In</a>
+            <p className="mt-14 text-center text-[10px] tracking-widest text-muted uppercase font-bold">
+                Existing Member? <a href={`/${locale}/login`} className="text-gold ml-1 hover:underline decoration-gold/30">Log In</a>
             </p>
         </div>
     );

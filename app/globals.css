@@ -1,51 +1,158 @@
+
+@config "../tailwind.config.cjs";
+
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/***************下面的是header用********************** */
-/* 让模糊效果在不同浏览器更一致 */
-.backdrop-blur-lg {
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px);
-}
-
-/* 给 Header 下方增加一个极细的渐变边框，增加高级感 */
-header {
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);
-}
 
 
 @layer base {
     :root {
-        --background: #ffffff;
-        --foreground: #09090b; /* 极深灰，比纯黑更有质感 */
+
+        --background: 253 251 247;
+        /* 前景文字：松露深棕 (RGB: 61 56 52) */
+        --foreground: 61 56 52;
+
+        /* 核心品牌色：哑光香槟棕 (RGB: 140 126 109) */
+        --accent-main: 140 126 109;
+
+
+
+
+        --card: 253 251 247;
+
+
+        /* 边框色：燕麦色 (RGB: 229 224 216) */
+        --card-border: 229 224 216;
+
+        /* 次要文字：石板陶土 (RGB: 166 155 143) */
+        --text-muted: 166 155 143;
+
+        /* 按钮与链接交互 */
+        --btn-primary-bg: 61 56 52;
+        --btn-primary-text: 253 251 247;
+
+        /**----------------------上面是最开始定义的主题色----------------------------------*/
+
+
+        /* 支付状态语义化 - 浅色模式 (低饱和度，符合品牌调性) */
+        --payment-success: 34 152 120;   /* 柔和翡翠绿 */
+        --payment-error: 180 83 9;       /* 赭石深橙 */
+        --payment-processing: 140 126 109; /* 延续品牌金棕色 */
+
+        /**----------------------下面是做checkout后补的色----------------------------------*/
+
+        /* --- 扩展层级：容器与卡片 --- */
+        --card-soft: 248 245 239;     /* 比背景稍深一点的米色，用于商品卡片背景 */
+        --card-subtle: 255 255 255;   /* 纯白，用于在米色背景上突出的元素 */
+
+        /* --- 交互状态：悬浮与点击 --- */
+        --hover-bg: 240 235 228;      /* 导航项悬浮色 */
+        --active-bg: 229 224 216;     /* 点击时的反馈色 */
+
+        /* --- 装饰性色调：线条、分隔 --- */
+        --border-light: 238 234 228;  /* 极浅的线条，用于 Header/Footer 分隔 */
+        --border-strong: 166 155 143; /* 较深的线条，用于输入框聚焦 */
+
+        /* --- 语义化扩展 --- */
+        --success-soft: 232 244 238;  /* 丝绸绿，用于支付成功/订单完成 */
+        --error-soft: 253 242 242;    /* 胭脂红，用于结算报错 */
+
+        /* --- 角色专属色 --- */
+        --avatar-bg: 220 214 206;     /* 用户头像默认背景色 */
+        --footer-bg: 61 56 52;        /* 底部深色背景 (松露棕) */
+        --footer-text: 217 210 201;   /* 底部文字 (羊绒灰) */
+
+        --payment-paypal: 0 112 186; /* PayPal 官方蓝 */
+        --payment-paypal-hover: 0 156 222;
+
+        /*34 152 120;*/
     }
+
     .dark {
-        --background: #09090b;
-        --foreground: #fafafa;
+        /* 背景：暖熏黑 */
+
+        --background: 20 19 18;
+        --card: 20 19 18;
+
+        /* 前景文字：羊绒灰白 (RGB: 217 210 201) */
+        --foreground: 217 210 201;
+
+        /* 核心品牌色：暮色香槟 (RGB: 191 175 153) */
+        --accent-main: 191 175 153;
+
+        /* 边框色：暗影木炭 (RGB: 38 36 34) */
+        --card-border: 38 36 34;
+
+        /* 次要文字：麻布灰 (RGB: 130 120 110) */
+        --text-muted: 130 120 110;
+
+        --btn-primary-bg: 217 210 201;
+        --btn-primary-text: 20 19 18;
+
+
+
+        /* 支付状态语义化 - 深色模式 */
+        --payment-success: 52 211 153;
+        --payment-error: 251 146 60;
+        --payment-processing: 191 175 153;
+
+
+
+
+        --card-soft: 28 26 25;        /* 深褐色卡片 */
+        --card-subtle: 38 36 34;      /* 用于区分层级的浅黑 */
+
+        --hover-bg: 46 43 40;
+        --active-bg: 56 52 48;
+
+        --border-light: 38 36 34;
+        --border-strong: 130 120 110;
+
+        --success-soft: 20 36 28;
+        --error-soft: 40 24 24;
+
+        --avatar-bg: 56 52 48;
+        --footer-bg: 15 14 13;
+        --footer-text: 130 120 110;
+
+    }
+
+    /* 全局 Link 样式 */
+    a {
+        transition: color 0.3s ease;
+        @apply cursor-pointer;
+    }
+
+    a:hover {
+        color: #C5A059;
     }
 }
+
+
+/* globals.css */
+@font-face {
+    font-family: 'Twemoji';
+    src: url('/fonts/TwemojiMozilla.ttf') format('truetype');
+    font-display: swap;
+}
+
+.font-emoji {
+    font-family: 'Twemoji', 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+}
+
+
+.flag-emoji {
+    font-family: "Twemoji", "Apple Color Emoji",
+    "Segoe UI Emoji", "Noto Color Emoji", system-ui;
+    font-size: 20px;
+    line-height: 1;
+}
+
+
+
+/*=========scoller优化============*/
+
+
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.05); border-radius: 10px; }
+

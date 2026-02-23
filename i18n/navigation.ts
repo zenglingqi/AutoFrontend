@@ -4,9 +4,9 @@ import { defineRouting } from 'next-intl/routing';
 
 export const routing = defineRouting({
     // 支持的语言列表
-    locales: ['en', 'zh','fr','ko'],
-    // 默认语言
-    defaultLocale: 'zh',
+    locales: ['en', 'zh'],
+    // 默认语言, 'zh','fr','ko'
+    defaultLocale: 'en',
 
     // 开启语言检测，如果路径不匹配，中间件会尝试重定向到最接近的合法语言
     localeDetection: true,

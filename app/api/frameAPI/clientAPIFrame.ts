@@ -1,56 +1,87 @@
-// src/api/client.ts
-import { auth } from "@/lib/auth"; // 引入你上传的 Auth.js 配置
+// @/app/api/frameAPI/clientAPIFrame.ts
+import { signOut, getSession } from "next-auth/react";
 
-
-
+function getBaseHeaders(accessToken?: string | null): Record<string, string> {
+    const headers: Record<string, string> = {
+        "User-Agent": "ainostore.com/front",
+        "X-Request-Source": "Nextjs-App",
+    };
+    if (accessToken) {
+        headers["Authorization"] = `Bearer ${accessToken}`;
+    }
+    return headers;
+}
 
 export async function clientAPIFrame(path: string, options: RequestInit = {}) {
-    const apiBase = process.env.BACKEND_API || "http://localhost:8081";
+    const apiBase = process.env.NEXT_PUBLIC_BACKEND_API;
 
-    let token = null;
+    let accessToken: string | null = null;
+    let refreshToken: string | null = null;
 
-    // --- 改进点 1: 增加防御性判断 ---
-    // 如果是登录或注册路径，直接跳过 auth()，避免死循环或上下文报错
-    const isAuthPath = path.includes('/api/auth/login') || path.includes('/api/auth/register');
-
-    if (!isAuthPath) {
-        try {
-            const session = await auth();
-            token = session?.user?.backendToken;
-        } catch (e) {
-            // 如果取 session 失败，只记录警告，不阻塞 fetch
-            console.warn(`[AUTH SKIP] 无法获取 Session: ${path}`);
-        }
+    try {
+        const session = await getSession();
+        // 修复 any：使用类型断言
+        accessToken = (session?.user as { accessToken?: string })?.accessToken || null;
+        refreshToken = (session?.user as { refreshToken?: string })?.refreshToken || null;
+    } catch {
+        // 修复 unused-vars：移除未使用的 (e)
+        console.warn("[AUTH] Failed to fetch session.");
     }
 
     const headers: Record<string, string> = {
-        "Content-Type": "application/json",
-        "User-Agent": "Mozilla/5.0...",
-        "X-Request-Source": "Nextjs-Server-Side",
+        ...getBaseHeaders(accessToken),
         ...(options.headers as Record<string, string>),
     };
 
-    if (token) {
-        headers["Authorization"] = `Bearer ${token}`;
+    if (!(options.body instanceof FormData) && !headers["Content-Type"]) {
+        headers["Content-Type"] = "application/json";
     }
 
-    try {
-        console.log(`>>>> [FETCH] 发起请求: ${apiBase}${path}`);
-        const res = await fetch(`${apiBase}${path}`, {
-            cache: options.cache || 'no-store',
-            ...options,
-            headers,
-        });
+    const requestOptions = { ...options, headers };
 
-        if (!res.ok) {
-            // 这里建议打印出具体状态码，方便排查 400/403
-            console.error(`[API ERROR] ${path} -> Status: ${res.status}`);
+    try {
+        // 修复 prefer-const：let 改为 const
+        const res = await fetch(`${apiBase}${path}`, requestOptions);
+
+        if (res.status === 401 && !path.includes('/api/backend-auth/refresh')) {
+            if (refreshToken) {
+                const refreshRes = await fetch(`${apiBase}/api/backend-auth/refresh`, {
+                    method: 'POST',
+                    headers: getBaseHeaders(),
+                    body: JSON.stringify({ refreshToken }),
+                    credentials: 'include'
+                });
+
+                if (refreshRes.ok) {
+                    const newTokens = await refreshRes.json();
+                    const newAccessToken = newTokens.accessToken;
+
+                    const retryHeaders = {
+                        ...headers,
+                        "Authorization": `Bearer ${newAccessToken}`
+                    };
+
+                    return await fetch(`${apiBase}${path}`, {
+                        ...requestOptions,
+                        headers: retryHeaders,
+                    });
+                } else {
+                    handleUnauthenticated();
+                }
+            } else {
+                handleUnauthenticated();
+            }
         }
 
         return res;
     } catch (err) {
-        // 如果这里报错，说明是真正的网络不通（比如 URL 拼错了，或者后端没开）
-        console.error(`[REAL NETWORK FAILED] ${path}:`, err);
+        console.error(`[FETCH ERROR] ${path}`, err);
         throw err;
+    }
+}
+
+function handleUnauthenticated() {
+    if (typeof window !== 'undefined') {
+        signOut({ callbackUrl: '/login' });
     }
 }

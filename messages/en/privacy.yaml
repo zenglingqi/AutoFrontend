@@ -1,0 +1,75 @@
+
+title: "Privacy Policy"
+subtitle: "This policy outlines how we collect, use, and protect your personal information in compliance with international data protection standards."
+lastUpdated: "Last Updated"
+
+sections:
+  # 1. Entity Information
+  entity:
+    title: "1. Entity Information"
+    body: "<strong>AINO GLOBAL COMMERCE LIMITED </strong>, (Business Registration: 79559648), located at Flat D07, 8/F, Kai Tak Building Stage II, 99 King Fuk Street, San Po Kong, Hong Kong (referred to as 'the Company', 'we', 'us', or 'our'), operates the website"
+
+  # 2. Data Collection
+  collection:
+    title: "2. Data Collection & Methods"
+    intro: "We collect information to provide better services to our users. This includes:"
+    identifiers: "<strong>Personal Identifiers:</strong> Email address, phone number, and account names."
+    auth: "<strong>Third-Party Authentication:</strong> When you login via <strong>Google</strong> or <strong>Facebook</strong>, we receive a unique token and basic profile information authorized by the provider."
+    logData: "<strong>Log Data:</strong> Technical information such as IP address, browser type, and device identifiers collected automatically via Cookies to improve site performance."
+
+  # 3. Facebook Deletion (The Core Compliance Part)
+  fbDeletion:
+    title: "3. Facebook Data Deletion Instructions"
+    intro: "In compliance with Facebook's Platform Data Deletion Policy, we provide a <strong>Data Deletion Callback URL</strong> that automatically processes requests to remove your personal information linked via Facebook Login."
+    howToTitle: "How to unlink and delete your data:"
+    step1: "Go to your Facebook Profile’s <strong>Settings & Privacy > Settings</strong>."
+    step2: "Navigate to <strong>Apps and Websites</strong> and find <strong>'AINO Store'</strong>."
+    step3: "Click the <strong>Remove</strong> button."
+    step4: "Confirm by clicking <strong>'Send Request'</strong> in the 'View Removed Apps and Websites' section to trigger our automatic deletion API."
+    manualTitle: "Manual Deletion:"
+    manualBody: "If you are unable to use the automated tool, you may email <span class='font-semibold text-blue-600'></span> with the subject 'Data Deletion Request'. We will verify your identity and purge your data from our servers within 7 business days."
+
+  # 4. Security
+  security:
+    title: "4. Security & Encryption"
+    intro: "Security is our top priority. We implement industry-standard technical and organizational measures:"
+    storage: "All sensitive data (passwords, contact info) is encrypted at rest using AES-256 and in transit via TLS/SSL."
+    access: "We strictly prohibit unauthorized internal access to user databases."
+    zeroSale: "<strong>Zero-Sale Policy:</strong> We do not sell, rent, or lease your personal data to third-party marketers or data brokers."
+
+  # 5. Payment
+  payment:
+    title: "5. Payment Gateways & Transaction Safety"
+    intro: "Financial transactions are processed through highly secure partners (<strong>PayPal</strong> and <strong>Stripe</strong>):"
+    quote: "We do not store, process, or transmit any raw credit card data on our servers. All cardholder data is handled directly by the payment providers who comply with PCI-DSS standards."
+    transparency: "<strong>Subscription Transparency:</strong> We do not engage in automatic recurring billing. Each transaction requires explicit user authorization at the time of checkout."
+
+  # 6. Rights
+  rights:
+    title: "6. Data Retention & Your Rights"
+    intro: "In compliance with Facebook and Google Platform Policies, we provide the following rights:"
+    erasure: "<strong>Right to Erasure:</strong> You may request the permanent deletion of your account and all associated data at any time."
+    portability: "<strong>Data Portability:</strong> You may request a copy of the personal data we hold about you."
+    retention: "<strong>Retention:</strong> We only retain personal data for as long as necessary to fulfill the purposes for which it was collected or to comply with legal obligations."
+    linkText: "Click here to access our Data Deletion Instructions."
+
+  # 7. Minors
+  minors:
+    title: "7. Children's Privacy"
+    body: "Our services are not intended for individuals under the age of 16. We do not knowingly collect personal data from children. If we become aware of such collection, we will take immediate steps to delete the data."
+
+  # 8. Amendments
+  amendments:
+    title: "8. Amendments"
+    body: "We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new policy on this page and updating the 'Last Updated' date."
+
+  # Contact
+  contact:
+    title: "Contact Information"
+    subtitle: "For any questions regarding your privacy, data deletion confirmation codes, or security, please contact us:"
+    companyName: "AINO GLOBAL COMMERCE LIMITED (安隆環球商貿有限公司)"
+    headquarters: "Hong Kong Headquarters"
+    email: "Email"
+    web: "Web"
+    address: "Address"
+    addressDetail: "Flat D07, 8/F, Kai Tak Building Stage II, 99 King Fuk Street, San Po Kong, HK"

@@ -1,0 +1,35 @@
+
+  title: "Payment Security"
+  subtitle: "How we protect your payment information"
+  intro:
+    title: "Overview"
+    body: "We take payment security seriously. This page explains the measures we use to protect your payment data and what you can do to stay safe."
+  how:
+    title: "How we protect payments"
+    encryption:
+      title: "Encryption"
+      body: "All payment data is encrypted in transit using TLS and encrypted at rest where applicable."
+    tokenization:
+      title: "Tokenization"
+      body: "We use tokenization so your card details are never stored on our servers in plain form."
+    compliance:
+      title: "Industry compliance"
+      body: "We work with PCI-compliant payment providers(Stripe/Paypal) and follow best practices for secure payments."
+    monitoring:
+      title: "Fraud monitoring"
+      body: "We continuously monitor transactions for suspicious activity and will contact you if we detect anything unusual."
+  tips:
+    title: "Tips to keep your payments safe"
+    use_secure_network: "Use a secure, private network when making payments."
+    verify_url: "Always verify the website URL and look for the padlock icon in the address bar."
+    strong_password: "Use strong, unique passwords for your account."
+    enable_2fa: "Enable two-factor authentication (2FA) when available."
+  faq:
+    title: "Frequently asked questions"
+    q1: "Do you store my full card number?"
+    a1: "No. We do not store full card numbers. We use tokenization and rely on PCI-compliant payment processors."
+    q2: "What should I do if I see an unauthorized charge?"
+    a2: "Contact our support immediately and we will help investigate and take appropriate action."
+  contact:
+    title: "Contact us"
+    body: "If you have questions about payment security, please contact our support team."
